@@ -15,8 +15,8 @@
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES := \
-    vendor/samsung/galaxysl/proprietary/ril/lib/libril.so:obj/lib/libril.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/libaudio.so:obj/lib/libaudio.so
+    vendor/samsung/galaxysl/proprietary/ril/lib/libril.so:obj/lib/libril.so
+
 
 # All the blobs necessary for galaxysl
 
@@ -43,8 +43,6 @@ PRODUCT_COPY_FILES += \
 
 # dsp
 PRODUCT_COPY_FILES += \
-    vendor/samsung/galaxysl/proprietary/baseimage/bin/cexec.out:system/bin/cexec.out \
-    vendor/samsung/galaxysl/proprietary/baseimage/lib/libbridge.so:system/lib/libbridge.so \
     vendor/samsung/galaxysl/proprietary/baseimage/lib/dsp/720p_h264vdec_sn.dll64P:system/lib/dsp/720p_h264vdec_sn.dll64P \
     vendor/samsung/galaxysl/proprietary/baseimage/lib/dsp/720p_mp4vdec_sn.dll64P:system/lib/dsp/720p_mp4vdec_sn.dll64P \
     vendor/samsung/galaxysl/proprietary/baseimage/lib/dsp/720p_mp4venc_sn.dll64P:system/lib/dsp/720p_mp4venc_sn.dll64P \
@@ -85,6 +83,14 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/galaxysl/proprietary/baseimage/lib/dsp/wmv9dec_sn.dll64P:system/lib/dsp/wmv9dec_sn.dll64P \
     vendor/samsung/galaxysl/proprietary/baseimage/lib/dsp/yuvconvert.l64p:system/lib/dsp/yuvconvert.l64p
 
+#omx
+PRODUCT_COPY_FILES += \
+    vendor/samsung/galaxysl/proprietary/omx/lib/libOMX.TI.720P.Decoder.so:system/lib/libOMX.TI.720P.Decoder.so \
+    vendor/samsung/galaxysl/proprietary/omx/lib/libOMX.TI.720P.Encoder.so:system/lib/libOMX.TI.720P.Encoder.so \
+    vendor/samsung/galaxysl/proprietary/omx/lib/libOMX.TI.h264.splt.Encoder.so:system/lib/libOMX.TI.h264.splt.Encoder.so \
+    vendor/samsung/galaxysl/proprietary/omx/lib/libOMX.TI.mp4.splt.Encoder.so:system/lib/libOMX.TI.mp4.splt.Encoder.so \
+    vendor/samsung/galaxysl/proprietary/omx/lib/librotation.so:system/lib/librotation.so 
+
 # keychars
 PRODUCT_COPY_FILES += \
     vendor/samsung/galaxysl/proprietary/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
@@ -99,16 +105,15 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/galaxysl/proprietary/ril/lib/libsecril-client.so:system/lib/libsecril-client.so \
     vendor/samsung/galaxysl/proprietary/ril/lib/libsec-ril.so:system/lib/libsec-ril.so
 
+#modem
+PRODUCT_COPY_FILES += \
+    vendor/samsung/galaxysl/proprietary/ril/modem/modem.bin:modem.bin \
+
 # sensors
 PRODUCT_COPY_FILES += \
     vendor/samsung/galaxysl/proprietary/sensors/bin/geomagneticd:system/bin/geomagneticd \
     vendor/samsung/galaxysl/proprietary/sensors/bin/orientationd:system/bin/orientationd \
     vendor/samsung/galaxysl/proprietary/sensors/lib/hw/sensors.default.so:system/lib/hw/sensors.default.so
-
-# vibrator
-PRODUCT_COPY_FILES += \
-    vendor/samsung/galaxysl/proprietary/vibrator/bin/immvibed:system/bin/immvibed \
-    vendor/samsung/galaxysl/proprietary/vibrator/lib/libImmVibeJ.so:system/lib/libImmVibeJ.so
 
 # wifi
 PRODUCT_COPY_FILES += \
@@ -122,23 +127,6 @@ PRODUCT_COPY_FILES += \
 # bluetooth
 PRODUCT_COPY_FILES += \
     vendor/samsung/galaxysl/proprietary/bluetooth/lib/firmware/TIInit_7.2.31.bts:root/lib/firmware/TIInit_7.2.31.bts
-
-# audio
-PRODUCT_COPY_FILES += \
-    vendor/samsung/galaxysl/proprietary/audio/lib/libasound.so:system/lib/libasound.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/libaudio.so:system/lib/libaudio.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/liba2dp.so:system/lib/liba2dp.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/libDVANS.so:system/lib/libDVANS.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/liblvvefs.so:system/lib/liblvvefs.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/libsamsungAcousticeq.so:system/lib/libsamsungAcousticeq.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/lib_Samsung_Acoustic_Module_Llite.so:system/lib/lib_Samsung_Acoustic_Module_Llite.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/lib_Samsung_Resampler.so:system/lib/lib_Samsung_Resampler.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/libsamsungSoundbooster.so:system/lib/libsamsungSoundbooster.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/lib_Samsung_Sound_Booster.so:system/lib/lib_Samsung_Sound_Booster.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/libsoundalive.so:system/lib/libsoundalive.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/soundfx/libbundlewrapper.so:system/lib/soundfx/libbundlewrapper.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/soundfx/libreverbwrapper.so:system/lib/soundfx/libreverbwrapper.so \
-    vendor/samsung/galaxysl/proprietary/audio/lib/soundfx/libvisualizer.so:system/lib/soundfx/libvisualizer.so
 
 # gps
 PRODUCT_COPY_FILES += \
